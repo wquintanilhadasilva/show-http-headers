@@ -41,6 +41,8 @@ public class TestController {
 		Arrays.stream(IP_HEADERS).forEach(v -> {
 			response.add(v,request.getHeader(v));
 		});
+		
+		response.add("ABC",request.getHeader("ABC"));
 		var headers = request.getHeaderNames();
 		while(headers.hasMoreElements()) {
 			var next = headers.nextElement();

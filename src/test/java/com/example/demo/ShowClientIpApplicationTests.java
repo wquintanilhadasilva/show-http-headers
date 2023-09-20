@@ -25,7 +25,11 @@ class ShowClientIpApplicationTests {
 		var hashArquivo2 = HashUtil.calcularHash(arquivo2.readAllBytes());
 		var hashArquivo3 = HashUtil.calcularHash(arquivo3.readAllBytes());
 		
-		assertThat(hashArquivo1).isEqualTo(hashArquivo2).isEqualTo(hashArquivo3);
+		var hash4 = HashUtil.calcularHash(null);
+		
+		assertThat(hashArquivo2).isEqualTo(hashArquivo3);
+		assertThat(hashArquivo1).isEqualTo(hashArquivo2);
+		assertThat(hashArquivo1).isEqualTo(hashArquivo3);
 		
 	}
 
